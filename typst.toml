@@ -2,7 +2,7 @@
 name = "data8-lib"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
-repository = ""
+repository = "https://github.com/data-8/typst-lib"
 authors = ["Tim Xie <xie@berkeley.edu>"]
 license = "MIT"
 description = "Worksheet and exam template for Data 8 at UC Berkeley."
