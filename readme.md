@@ -22,7 +22,22 @@ Example PDFs can be found in the [`examples/`](https://github.com/data-8/typst-l
 
 There are three library files: `utils.typ` which defines the different question components and other niceties, `assignment.typ` which formats for assignment documents (worksheets, notes), and `exam.typ` which formats for exams.
 
-#### Components
+#### Question Components
 
-1. Long answer questions
-2. Multiple choice questions
+1. Long answer questions (`#question`)
+2. Multiple choice questions (`#mcq`)
+3. Answer bank
+
+#### Document Formatting
+
+1. Section
+2. Subtitle
+
+#### Info Block/Callout
+
+#### Other Utilities
+
+1. Boxed Math
+2. Blank page indicator
+3. Next page indicator
+4. Code bubble
