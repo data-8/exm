@@ -40,25 +40,20 @@ There are three library files: `utils.typ` which defines the different question 
 - **`ansalign`** (`alignment`, default: `horizon`): alignment of the content
 - **`points`** (`float`, default: `""`): points assigned to the question
 
-**Example**
-```typst
-#question(ansbox: true, ansheight: 3cm, points: 4.0)[
-    What is $2 + 2$? Write a statement to evaluate in Python.
-    // since this is just Typst content, it can be anything (could include tables, math, images, code blocks, etc...)
-][
-    ```py
-    2 + 2  # 4
-    ```
-]
-```
-
-Without answer shown:
-
-<img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 17" src="https://github.com/user-attachments/assets/e226df70-660b-4ea2-aad4-cdaf18abdac0" />
-
-With answer shown:
-
-<img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 42" src="https://github.com/user-attachments/assets/e479fb8b-be28-406a-ab85-1ef1d0dba9be" />
+> **Example**
+> ```typst
+> #question(ansbox: true, ansheight: 3cm, points: 4.0)[
+>    What is $2 + 2$? Write a statement to evaluate in Python.
+>    // since this is just Typst content, it can be anything (could include tables, math, images, code blocks, etc...)
+> ][
+>    `2 + 2  # 4`
+> ]
+> ```
+> 
+> Without answer shown: <br>
+    <img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 17" src="https://github.com/user-attachments/assets/e226df70-660b-4ea2-aad4-cdaf18abdac0" /> <br>
+> With answer shown: <br>
+    <img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 42" src="https://github.com/user-attachments/assets/e479fb8b-be28-406a-ab85-1ef1d0dba9be" />
 
 **Notes**
 
@@ -85,23 +80,24 @@ With answer shown:
 - **`ansbox, height, ansheight, ansalign, points`**: same as `#question` (see above)
 
 
-**Example**
-```typst
-#mcq([What will the following Python expression be equivalent to?
-      #align(center)[`2 + 2`]
-     ], (
-        `4`,
-        `len(np.array([1, 2, 3, 4]))`,
-        `2`,
-        `6`,
-        "None of the above"
-     ),
-     (0, 1),
-     points: 3.0,
-     multi: (true, true, true, true, false)
-)
-```
-<img width="768" height="186" alt="Screenshot 2026-01-17 at 12 13 59" src="https://github.com/user-attachments/assets/193c19fc-b8bd-47f2-a370-c1100f29b107" />
+> **Example**
+> ```typst
+> #mcq([What will the following Python expression be equivalent to?
+>      #align(center)[`2 + 2`]
+>     ], (
+>        `4`,
+>         `len(np.array([1, 2, 3, 4]))`,
+>        `2`,
+>        `6`,
+>       "None of the above"
+>     ),
+>     (0, 1),
+>     points: 3.0,
+>     multi: (true, true, true, true, false)
+> )
+> 
+> With answer shown: <br>
+    <img width="768" height="186" alt="Screenshot 2026-01-17 at 12 13 59" src="https://github.com/user-attachments/assets/193c19fc-b8bd-47f2-a370-c1100f29b107" />
 
 
 
