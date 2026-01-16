@@ -113,13 +113,13 @@
     - If you need to use the restroom, bring your phone, exam, reference sheet and student ID to the front of the room.
 
     - For written questions:
-    - answers written outside the boxes provided will not be graded;
-    - if your answer is ambiguous or you provide multiple answers, the worst interpretation will be graded.
+      - answers written outside the boxes provided will not be graded;
+      - if your answer is ambiguous or you provide multiple answers, the worst interpretation will be graded.
 
     - For coding questions:
-    - blank spaces may include multiple arguments or functions per blank, but your solution must use every blank available;
-    - you may assume the `datascience` and `numpy` libraries are imported, as seen in class;
-    - the use of *any code* which has not been taught in this offering of the course is not allowed and will result in zero credit.
+      - blank spaces may include multiple arguments or functions per blank, but your solution must use every blank available;
+      - you may assume the `datascience` and `numpy` libraries are imported, as seen in class;
+      - the use of *any code* which has not been taught in this offering of the course is not allowed and will result in zero credit.
 
     - For multiple choice questions, see question types and instructions below.
   ]
