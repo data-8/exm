@@ -58,7 +58,7 @@
   } else if t == "Example" {
     rgb("808C80")
   } else {
-    rgb("969696")
+    rgb("000")
   }
 
   let bgcolor = if t == "Definition" {
@@ -70,7 +70,7 @@
   } else if t == "Example" {
     rgb("F6F6F6")
   } else {
-    rgb("F0F0F0")
+    rgb("ebebeb")
   }
 
   block(
@@ -81,8 +81,10 @@
     radius: 0pt,
     width: 100%,
   )[
-    #text(t, fill: color, weight: 600)
-    #v(-6pt)
+    #if t != "" [
+      #text(t, fill: color, weight: 600)
+      #v(-6pt)
+    ]
 
     #body
   ]
