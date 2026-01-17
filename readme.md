@@ -2,6 +2,9 @@
 
 Templates and formatting for Data 8's Discussion and Tutoring Worksheets, Reference Sheet, Notes and Exams.
 
+<img width="3825" height="1650" alt="exam" src="https://github.com/user-attachments/assets/661a0029-f11c-4097-9406-dd98375967de" />
+<img width="3825" height="1650" alt="discussions" src="https://github.com/user-attachments/assets/1bbe8129-2631-4074-a4db-f1338349bf65" />
+
 ## Features
 - automatic point totalling for exams
 - multiple choice questions (single select and multiselect, or mix of bubble types)
@@ -12,10 +15,7 @@ Templates and formatting for Data 8's Discussion and Tutoring Worksheets, Refere
 - custom answer blank for coding questions
 - callouts for notes and information boxes
 
-<img width="3825" height="1650" alt="exam" src="https://github.com/user-attachments/assets/bb93ecb5-74d3-4e59-babc-c3e2aef756f5" />
-<img width="3825" height="1650" alt="discussions" src="https://github.com/user-attachments/assets/2786d41a-2c73-4c6a-9cbf-f96867118e8c" />
-
-Example PDFs can be found in the [`examples/`](https://github.com/data-8/typst-lib/tree/main/examples) directory.
+Example PDFs can be found in the [`examples/`](https://github.com/data-8/typst-lib/tree/main/examples) directory. A quick start skeleton template can be found in the root directory as `example.typ`.
 
 <hr>
 
