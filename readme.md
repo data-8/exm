@@ -336,7 +336,7 @@ Indicator to see next page.
 
 ## Templates
 
-This library provides two templates, one for writing assignments/worksheets, and the other for exams. You can find examples for assignment templates [here (discussion)](./examples/discussion.pdf) and [here (note)](./examples/note.pdf). You can find an example exam [here](./examples/exam.pdf). The quickstart templates can be found in the [`quickstart/`](./quickstart) directory.
+This library provides two templates, one for writing assignments/worksheets, and the other for exams. You can find examples for assignment templates [here (discussion)](./examples/discussion.pdf) and [here (note)](./examples/note.pdf). You can find an example exam [here](./examples/exam.pdf). The quickstart templates for assignments and exams can be found in the [`quickstart/`](./quickstart) directory.
 
 ### Assignment
 

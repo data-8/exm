@@ -1,11 +1,12 @@
 [package]
-name = "data8-lib"
+name = "exm"
 version = "0.1.0"
-entrypoint = "src/lib.typ"
-repository = "https://github.com/data-8/typst-lib"
+entrypoint = "lib/lib.typ"
+repository = "https://github.com/data-8/exm"
 authors = ["Tim Xie <xie@berkeley.edu>"]
-license = "GPLv3"
-description = "Worksheet and exam template for Data 8 at UC Berkeley."
-keywords = ["exam", "worksheet", "assignment", "quiz"]
+license = "MIT"
+description = "Worksheet and exam template used by Data 8 at UC Berkeley."
+keywords = ["exam", "worksheet", "assignment", "quiz", "homework", "note", "discussion"]
+disciples = ["computer-science", "education", "mathematics"]
 categories = ["layout", "model", "utility"]
-exclude = ["**/*.pdf"]
+exclude = ["**/*.pdf", "quickstart/"]
