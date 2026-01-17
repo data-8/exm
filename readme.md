@@ -27,6 +27,8 @@ There are three library files: `utils.typ` which defines the different question 
 
 ### 1. **Long answer questions**
 
+Long answer question with an optional answer box/space.
+
 ```typst
 #question(ansbox, height, ansheight, ansalign, points)[<question>][<answer>]
 ````
@@ -52,13 +54,14 @@ There are three library files: `utils.typ` which defines the different question 
 > <p align="center"><img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 17" src="https://github.com/user-attachments/assets/e226df70-660b-4ea2-aad4-cdaf18abdac0" /><br>(without answer shown)</p>
 > <p align="center"><img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 42" src="https://github.com/user-attachments/assets/e479fb8b-be28-406a-ab85-1ef1d0dba9be" /><br>(with answer shown)</p>
     
-**Notes**
-- when the answer box is *not* shown, the default `ansheight` is auto (fits to content). When the answer box is shown, the default `ansheight` is the same as the height defined.
-  - you may override `ansheight` to your liking if you don't want this behaviour
+When the answer box is *not* shown, the default `ansheight` is auto (fits to content). When the answer box is shown, the default `ansheight` is the same as the height defined.
+You may override `ansheight` to your liking if you don't want this behaviour
 
 <br>
    
 ### **2. Multiple choice questions**
+
+Multiple choice questions that support different bubble types (circle, box) with optional answer explanations.
 
 ```typst
 #mcq(question, choices, answer, 
@@ -111,12 +114,14 @@ There are three library files: `utils.typ` which defines the different question 
 
 ### **3. Answer bank**
 
+A bank of answer choices to select from.
+
 ```typst
 #ansbank(cols, choices) 
 ````
 
 **Parameters**
-- **`cols`** (`int`): number of columns to display answer choices
+- **`cols`** (`int`, required): number of columns to display answer choices
 - **`choices`** (array of `content`, required): choices
 
 > **Examples**
@@ -145,8 +150,49 @@ There are three library files: `utils.typ` which defines the different question 
 
 ## Document Formatting
 
-1. Section
-2. Subtitle
+### 1. Section
+
+```typst
+#section(title, height, number, points, content)
+```
+
+**Parameters**
+- **`title`** (`int`): number of columns to display answer choices
+- **`height`** (`length`, default: `auto`): height of entire section
+- **`number`** (`bool`, default: `true`): boolean to automatically count up sections (add `1.`, `2.`, ...etc in front of title)
+- **`points`** (`bool`, default: `false`): boolean to count up points in section
+- **`content`** (`content`): content to be wrapped in section
+
+> **Examples**
+> ```typst
+> #section("First Section")[
+>   Content in this section does not total up points of sub questions.
+> ]
+> 
+> #v(12pt)
+> 
+> #section("Second Section", points: true)[
+>   Content in this second section does total up points
+> 
+>   + #question(points:2.0)[Subquestion][Subquestion answer]
+>   
+>   + #question(points:2.0)[Subquestion][Subquestion answer]
+>   
+>   + #question(points:2.0)[Subquestion][Subquestion answer]
+> ]
+> ```
+> <p align="center"><img width="768" height="315" alt="Screenshot 2026-01-17 at 17 06 16" src="https://github.com/user-attachments/assets/768ea846-dceb-4235-a189-6ffc0b8bb0e3" /></p>
+
+A `#section` will automatically total up all subquestion point values wrapped in that section. You can choose to display this counter in front of the question with the `points` parameter.
+If you would like each section to start on a new page, insert a `#pagebreak()` between section blocks.
+
+For exams/worksheets that want all questions to display `points` and `number`, you can use this let statement at the top of the document. This will enable `number` and `points` for every section and you do not need to specify these parameters for each section block.
+```typst
+#let section = section.with(number: true, points: true)
+```
+
+
+### 2. Subtitle
 
 ## Info Block/Callout
 
