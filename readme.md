@@ -1,5 +1,3 @@
-# Data 8 Typst Library
-
 Templates and formatting for Data 8's Discussion and Tutoring Worksheets, Reference Sheet, Notes and Exams.
 
 This library was first created for [UC Berkeley's Data 8](https://www.data8.org) in the Fall 2025 semester.
