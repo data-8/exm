@@ -1,2 +1,2 @@
-#include "assignment.typ": *
-#include "exam.typ": *
+#import "assignment.typ": *
+#import "exam.typ": *
