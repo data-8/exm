@@ -1,6 +1,3 @@
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.1": *
-
 #let section-counter = counter("sectioncounter")
 #let section-points = state("sectionpoints", ())
 
@@ -136,12 +133,16 @@
 }
 
 
-#let _getheight(height, ansheight) = {
+#let _getheight(height, ansheight, ansbox) = {
   // NOTE: must have context when run
   let h = if docmode.get() == "sol" { 
     if ansheight == -1 {
-      if height == auto { auto }
-      else { height - 12pt }
+      if ansbox { 
+        if height == auto { auto }
+        else { height - 12pt }
+      } else {
+        auto
+      }
     } else { 
       if ansheight == auto { auto }
       else { ansheight - 12pt }
@@ -166,7 +167,7 @@
   let pstr = _getptstr(points)
 
   context {
-    let h = _getheight(height, ansheight)
+    let h = _getheight(height, ansheight, ansbox)
 
     block(width: 100%)[
       #if points != "" [
@@ -211,7 +212,7 @@
   let ansarr = { if type(answer) == int { (answer,) } else { answer } }
 
   context {
-    let h = _getheight(height, ansheight)
+    let h = _getheight(height, ansheight, ansbox)
 
     let items = range(length).map(i => [
       #let fill = if docmode.get() == "sol" and ansarr.contains(i) { colorblue } else { white }
@@ -330,3 +331,4 @@
 #let bubble(content, color) = [
   #box(content, fill: color.mix(white).transparentize(65%), radius: 3pt, inset: 2.5pt, stroke: stroke(paint: color, thickness: 0.5pt), baseline: 2.5pt)
 ]
+
