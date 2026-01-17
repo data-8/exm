@@ -25,6 +25,17 @@
 // q/a
 #let colorblue = rgb("#2A40E2")
 
+#let colorcyan = rgb("6993BF")
+#let colorred = rgb("DD4466")
+#let colorgreen = rgb("59B279")
+#let colorgrey = rgb("808C80")
+
+#let colorlightcyan = rgb("E8EDF4")
+#let colorlightred = rgb("F4E8EC")
+#let colorlightgreen = rgb("E8F4EC")
+#let colorlightgrey = rgb("F6F6F6")
+
+
 // print, screen, sol
 // print will disable syntax highlighting for code blocks
 #let docmode = state("mode", "sol")
@@ -34,41 +45,31 @@
   stack(dir: ltr, spacing: 0.75cm, ..items)
 }
 
-#let info(body) = block[
-  #block(
-    fill: rgb("#ebebeb"),
-    stroke: none,
-    inset: 8pt,
-    radius: 0pt,
-    width: 100%,
-  )[#body]
-]
-
 #let boxed(color: colorblue, body) = {
   align(center, rect(stroke: stroke(thickness:0.5pt,paint:color))[#body])
 }
 
 #let callout(t, body) = {
   let color = if t == "Definition" {
-    rgb("6993BF")
+    colorcyan
   } else if t == "Formula" {
-    rgb("DD4466")
+    colorred
   } else if t == "Method" {
-    rgb("59B279")
+    colorgreen
   } else if t == "Example" {
-    rgb("808C80")
+    colorgrey
   } else {
     rgb("000")
   }
 
   let bgcolor = if t == "Definition" {
-    rgb("E8EDF4")
+    colorlightcyan
   } else if t == "Formula" {
-    rgb("F4E8EC")
+    colorlightred
   } else if t == "Method" {
-    rgb("E8F4EC")
+    colorlightgreen
   } else if t == "Example" {
-    rgb("F6F6F6")
+    colorlightgrey
   } else {
     rgb("ebebeb")
   }
@@ -90,7 +91,7 @@
   ]
 }
 
-
+#let info(body) = callout("", body)
 
 #let subtitle(t) = [
   #v(6pt)

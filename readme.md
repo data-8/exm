@@ -65,8 +65,8 @@ Long answer question with an optional answer box/space.
 >    `2 + 2  # 4`
 > ]
 > ```
-> <p align="center"><img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 17" src="https://github.com/user-attachments/assets/e226df70-660b-4ea2-aad4-cdaf18abdac0" /><br>(without answer shown)</p>
-> <p align="center"><img width="768" height="110" alt="Screenshot 2026-01-17 at 11 58 42" src="https://github.com/user-attachments/assets/e479fb8b-be28-406a-ab85-1ef1d0dba9be" /><br>(with answer shown)</p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 11 58 17" src="https://github.com/user-attachments/assets/e226df70-660b-4ea2-aad4-cdaf18abdac0" /><br>(without answer shown)</p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 11 58 42" src="https://github.com/user-attachments/assets/e479fb8b-be28-406a-ab85-1ef1d0dba9be" /><br>(with answer shown)</p>
     
 When the answer box is *not* shown, the default `ansheight` is auto (fits to content). When the answer box is shown, the default `ansheight` is the same as the height defined.
 You may override `ansheight` to your liking if you don't want this behaviour
@@ -121,7 +121,7 @@ Multiple choice questions that support different bubble types (circle, box) with
 >      cols: (2.5cm, 5cm, 7cm, 4cm),
 > )
 > ```
-> <p align="center"><img width="768" height="62" alt="Screenshot 2026-01-17 at 16 39 11" src="https://github.com/user-attachments/assets/b4988328-a7bf-40f5-9e73-9bbedc669c9d" /><br>(with answer shown)</p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 16 39 11" src="https://github.com/user-attachments/assets/b4988328-a7bf-40f5-9e73-9bbedc669c9d" /><br>(with answer shown)</p>
 
 <br>
 
@@ -156,7 +156,7 @@ A bank of answer choices to select from.
 >   multi: range(9).map(i => true) + (false,)
 > )
 > ```
-> <p align="center"><img width="768" height="195" alt="Screenshot 2026-01-17 at 16 51 19" src="https://github.com/user-attachments/assets/ff0e7a39-74ad-471c-99dd-dd105fcac4b9" /><br>(with answer shown)</p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 16 51 19" src="https://github.com/user-attachments/assets/ff0e7a39-74ad-471c-99dd-dd105fcac4b9" /><br>(with answer shown)</p>
 
 
 
@@ -192,7 +192,7 @@ A bank of answer choices to select from.
 >   + #question(points:2.0)[Subquestion][Subquestion answer]
 > ]
 > ```
-> <p align="center"><img width="768" height="315" alt="Screenshot 2026-01-17 at 17 06 16" src="https://github.com/user-attachments/assets/768ea846-dceb-4235-a189-6ffc0b8bb0e3" /></p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 17 06 16" src="https://github.com/user-attachments/assets/768ea846-dceb-4235-a189-6ffc0b8bb0e3" /></p>
 
 A `#section` will automatically total up all subquestion point values wrapped in that section. You can choose to display this counter in front of the question with the `points` parameter.
 If you would like each section to start on a new page, insert a `#pagebreak()` between section blocks.
@@ -236,17 +236,83 @@ For exams/worksheets that want all questions to display `points` and `number`, y
 >   An example callout
 > ]
 > ```
-> <p align="center"><img width="768" height="349" alt="Screenshot 2026-01-17 at 18 14 40" src="https://github.com/user-attachments/assets/8de7862e-fc3d-4ca0-b028-6bd95df5b8fe" /></p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 14 40" src="https://github.com/user-attachments/assets/8de7862e-fc3d-4ca0-b028-6bd95df5b8fe" /></p>
 
 
 ## Coding Blanks
 
+Blanks for coding questions can be used in between code blocks to draw a labelled line for students to fill in.
+
+```typst
+#blank(width, placeholder, answer)
+```
+> **Examples**
+> ```typst
+> `def distance(p1, p2, row):`
+> 
+> `    arr = np.array(row)`
+> 
+> `    v1 = arr.`#blank(150pt, "[A]")
+> 
+> `    v2 = arr.`#blank(150pt, "[B]")
+> 
+> `    distances = `#blank(250pt, "[C]")
+> 
+> `    `#blank(200pt, "[D]")
+> ```
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 27 07" src="https://github.com/user-attachments/assets/196b20e7-edfc-4e2d-b8be-d46698b61549" /></p>
+
+
 ## Other Utilities
 
 ### 1. Boxed Math
+
+You can draw boxes (like Latex) around answers with `#boxed(...)`.
+
+> **Example**
+> ```typst
+> $ y = 1/10x ==> boxed(x = 10 y) $]
+> ```
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 32 18" src="https://github.com/user-attachments/assets/c856cdd8-84ad-49a0-84b7-62aa07126ee5" /></p>
+
+
 ### 2. Blank page indicator
+Indicator to skip a page / indicate it is blank.
+
+> **Example**
+> ```typst
+> #blankpage([This page intentionally left blank
+> 
+>   The exam begins on the next page.
+> ])
+> ```
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 33 47" src="https://github.com/user-attachments/assets/e3820523-2355-471d-966f-3fd45a31a9fb" /></p>
+
+
 ### 3. Next page indicator
+Indicator to see next page.
+
+> **Example**
+> ```typst
+> #nextpage([See next page])
+> ```
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 37 17" src="https://github.com/user-attachments/assets/3da15cd7-4eae-4eda-a384-16caf368a95e" /></p>
+
+
 ### 4. Code bubble
+```typst
+#bubble(content, color)
+```
+
+> **Example**
+> ```typst
+> The #bubble(`def`, colorred) keyword is used for creating functions in Python. To return a value in the function, use the #bubble(`return`, colorgreen) keyword.
+> ```
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 18 43 59" src="https://github.com/user-attachments/assets/484831ff-eca5-4a1d-8e83-a8d61929929a" /></p>
+
+
+
+
 ### 5. Subtitle
 
 > **Examples**
@@ -257,5 +323,6 @@ For exams/worksheets that want all questions to display `points` and `number`, y
 >   More stuff
 > ]
 > ```
-> <p align="center"><img width="768" height="127" alt="Screenshot 2026-01-17 at 17 24 33" src="https://github.com/user-attachments/assets/216d561c-549c-4877-8765-ca36d563e8fa" /></p>
+> <p align="center"><img width=95% alt="Screenshot 2026-01-17 at 17 24 33" src="https://github.com/user-attachments/assets/216d561c-549c-4877-8765-ca36d563e8fa" /></p>
+
 
