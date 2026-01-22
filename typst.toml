@@ -7,6 +7,11 @@ authors = ["Tim Xie <xie@berkeley.edu>"]
 license = "MIT"
 description = "Worksheet and exam template used by Data 8 at UC Berkeley."
 keywords = ["exam", "worksheet", "assignment", "quiz", "homework", "note", "discussion"]
-disciples = ["computer-science", "education", "mathematics"]
+disciplines = ["computer-science", "education", "mathematics"]
 categories = ["layout", "model", "utility"]
 exclude = ["**/*.pdf", "quickstart/"]
+
+[template]
+path = "quickstart"
+entrypoint = "exam.typ"
+thumbnail = "thumbnail.png"
