@@ -2,7 +2,7 @@
 #let section-points = state("sectionpoints", ())
 
 #let add-points = p => {
-  let section = section-counter.get().at(0) - 1
+  let section = calc.max(section-counter.get().at(0) - 1, 0)
 
   section-points.update(it => {
     for i in range(it.len(), section + 1) {
