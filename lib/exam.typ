@@ -12,7 +12,8 @@
   blanks: ("Your Name", "Your Student ID"),
   instructions: "",
   extra: "",
-  sols: false) = {
+  sols: false,
+  blank_page_after_name_page: true) = {
   set par(justify: true)
   set text(size: 10pt)
   show smallcaps: set text(font: "Libertinus Serif")
@@ -257,9 +258,10 @@
     paper: "us-letter"
   )
 
-  blankpage()
-
-  pagebreak()
+  if blank_page_after_name_page {
+    blankpage()
+    pagebreak()
+  }
 
   [ #doc ]
 }
