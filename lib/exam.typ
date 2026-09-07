@@ -13,7 +13,7 @@
   instructions: "",
   extra: "",
   sols: false,
-  blank_page_after_name_page: true) = {
+  insertblank: true) = {
   set par(justify: true)
   set text(size: 10pt)
   show smallcaps: set text(font: "Libertinus Serif")
@@ -258,7 +258,7 @@
     paper: "us-letter"
   )
 
-  if blank_page_after_name_page {
+  if insertblank {
     blankpage()
     pagebreak()
   }

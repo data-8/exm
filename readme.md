@@ -386,13 +386,13 @@ This library provides two templates, one for writing assignments/worksheets, and
   instructions: include("instructions.typ"),
   extra: include("extra.typ"),
   sols: false,
-  blank_page_after_name_page: true
+  insertblank: true
 )
 ```
 
 The `blanks` parameter allows you to pass in an array of strings that create blanks for students to fill out. `instructions` and `include` take in any content which are filled in inside instructions, and underneath it respectively. You may find creating separate files for `instructions` and `extra` and using `include(...)` to be more modular.
 
-By default, a "This page intentionally left blank" page follows the name page so that the first question starts on a fresh sheet. Pass `blank_page_after_name_page: false` to omit it and start the questions on the page after the name page.
+By default, a "This page intentionally left blank" page follows the name page so that the first question starts on a fresh sheet. Pass `insertblank: false` to omit it and start the questions on the page after the name page.
 
 
 
